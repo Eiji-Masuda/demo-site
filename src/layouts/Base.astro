@@ -1,0 +1,56 @@
+---
+// 共通レイアウト: ヘッダー・フッター・全体スタイル
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} - 株式会社ひだまり珈琲` : '株式会社ひだまり珈琲｜心あたたまる一杯を、あなたのそばに';
+const desc = description ?? '株式会社ひだまり珈琲は、自家焙煎スペシャルティコーヒーと手作り焼き菓子のカフェ「カフェひだまり」を運営しています。';
+const path = Astro.url.pathname;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={desc} />
+  <title>{pageTitle}</title>
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/img/logo.svg" alt="ひだまり珈琲" height="36" />
+        <span>株式会社ひだまり珈琲</span>
+      </a>
+      <nav>
+        <a href="/" class={path === '/' ? 'on' : ''}>ホーム</a>
+        <a href="/menu/" class={path.startsWith('/menu') ? 'on' : ''}>メニュー</a>
+        <a href="/news/" class={path.startsWith('/news') ? 'on' : ''}>お知らせ</a>
+        <a href="/about/" class={path.startsWith('/about') ? 'on' : ''}>会社概要</a>
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <img src="/img/logo-white.svg" alt="ひだまり珈琲" height="30" />
+          <p>心あたたまる一杯を、あなたのそばに。</p>
+        </div>
+        <div>
+          <b>カフェひだまり 本店</b>
+          <p>〒550-0000 大阪府大阪市西区ひだまり町1-2-3<br />TEL: 06-0000-0000</p>
+        </div>
+      </div>
+      <div class="copy">&copy; 2026 Hidamari Coffee Inc.（架空企業・SiteLeapデモサイト）</div>
+    </div>
+  </footer>
+</body>
+</html>

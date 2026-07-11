@@ -1,0 +1,16 @@
+{
+  "name": "demo-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "株式会社ひだまり珈琲（架空企業）デモサイト (Astro / SiteLeap管理対象)",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}
