@@ -1,0 +1,25 @@
+name: CI
+
+# PR作成・更新時とmainへのpush時に、ビルド成功を自動チェックする。
+# SiteLeap はこのワークフローの結果を PR の change_sets.check_status（passed/failed）に反映する。
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Astro)
+        run: npm run build
