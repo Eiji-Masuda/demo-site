@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="秋の来店キャンペーン"
+  description="カフェひだまりの秋の来店キャンペーン特設ページ。栗・いちじく・洋梨・ナッツを盛り込んだ季節限定モンブランケーキが登場します。"
+>
+  <div class="page-head"><h1>秋の来店キャンペーン</h1></div>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>実りの秋を、ひと皿に。</h2>
+      <div class="sub">AUTUMN CAMPAIGN</div>
+
+      <div class="campaign-hero">
+        <img
+          src="/img/campaign/autumn-montblanc.png"
+          alt="秋の味覚を盛り込んだ、栗・いちじく・洋梨・ナッツの季節限定モンブランケーキ"
+        />
+        <div class="campaign-hero-body">
+          <h3>季節限定モンブランケーキ</h3>
+          <p>
+            秋の味覚を盛り込んだ、栗・いちじく・洋梨・ナッツの季節限定モンブランケーキ。
+            なめらかなマロンクリームに、旬の果実とナッツの香ばしさを重ねた、
+            この季節だけの特別な一皿です。
+          </p>
+          <div class="price">780円（税込）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2>キャンペーンについて</h2>
+      <div class="sub">INFORMATION</div>
+      <table class="info-table">
+        <tbody>
+          <tr><th>キャンペーン期間</th><td>2026年9月1日（火）〜11月30日（月）</td></tr>
+          <tr><th>対象メニュー</th><td>季節限定モンブランケーキ</td></tr>
+          <tr><th>提供時間</th><td>営業時間内（10:00〜19:00 / ラストオーダー 18:30）</td></tr>
+          <tr><th>ご注意</th><td>数量限定のため、なくなり次第終了となります。テイクアウトも承ります。</td></tr>
+        </tbody>
+      </table>
+      <div class="more"><a class="btn" href="/menu/">メニューを見る</a></div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .campaign-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .campaign-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .campaign-hero-body {
+    padding: 10px 30px 10px 0;
+  }
+  .campaign-hero-body h3 {
+    font-size: 20px;
+    color: var(--brown-dark);
+    margin-bottom: 12px;
+  }
+  .campaign-hero-body p {
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .campaign-hero-body .price {
+    font-size: 18px;
+    margin-top: 14px;
+  }
+  @media (max-width: 760px) {
+    .campaign-hero {
+      grid-template-columns: 1fr;
+    }
+    .campaign-hero-body {
+      padding: 4px 22px 24px;
+    }
+  }
+</style>
