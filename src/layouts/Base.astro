@@ -29,6 +29,7 @@ const path = Astro.url.pathname;
       <nav>
         <a href="/" class={path === '/' ? 'on' : ''}>ホーム</a>
         <a href="/menu/" class={path.startsWith('/menu') ? 'on' : ''}>メニュー</a>
+        <a href="/takeout/" class={path.startsWith('/takeout') ? 'on' : ''}>テイクアウト</a>
         <a href="/news/" class={path.startsWith('/news') ? 'on' : ''}>お知らせ</a>
         <a href="/about/" class={path.startsWith('/about') ? 'on' : ''}>会社概要</a>
       </nav>
